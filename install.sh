@@ -29,6 +29,21 @@ create_symlink() {
     ln -s "$target" "$linkPath"
 }
 
-
+execute_install_script() {
+    local dir="$1"
+    if [ ! -d $dir ]; then
+        echo "tried installing $dir install script but directory doesnt exist" >&2
+        return
+    fi
+    local file="$dir/install.sh"
+    if [ ! -f $file ]; then
+        echo "no install file found in folder $dir" >&2
+        return
+    fi
+    chmod +x $file
+    $file
+}
 
 create_symlink "$DOTFILES/nvim" "$HOME/.config/nvim"
+create_symlink "$DOTFILES/kitty" "$HOME/.config/kitty"
+execute_install_script "$DOTFILES/kitty"
