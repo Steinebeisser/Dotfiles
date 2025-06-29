@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DOTFILES="$(pwd)"  
+DOTFILES="$(dirname "$(realpath "$0")")"
+  
 
 get_next_backup_name() {
     local path="$1"
@@ -45,5 +46,9 @@ execute_install_script() {
 }
 
 create_symlink "$DOTFILES/nvim" "$HOME/.config/nvim"
+execute_install_script "$DOTFILES/nvim"
+
 create_symlink "$DOTFILES/kitty" "$HOME/.config/kitty"
 execute_install_script "$DOTFILES/kitty"
+
+create_symlink "$DOTFILES/.zshrc" "$HOME/.zshrc"

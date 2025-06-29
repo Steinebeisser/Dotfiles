@@ -62,6 +62,7 @@ main() {
     install_dotnet_sdk
     install_package_if_needed "fd" "fd"
     install_package_if_needed "ripgrep" "rg"
+    install_package_if_needed "npm" "npm"
     
     echo "Neovim Setup complete!"
 }

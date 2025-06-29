@@ -27,3 +27,11 @@ fi
 
 sudo cp "$source" "$dest"
 echo "Background image copied to $dest"
+
+echo "Installing font"
+if ! pacman -Qs "ttf-jetbrains-mono-nerd" | grep -q "ttf-jetbrains-mono-nerd"; then
+    sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd
+    fc-cache -f -v
+else 
+    echo "Font already installed"
+fi
