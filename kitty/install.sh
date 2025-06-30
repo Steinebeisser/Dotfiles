@@ -3,7 +3,8 @@
 overwrite=0
 pwd="$(dirname "$(realpath "$0")")"
 source="$pwd/assets/kitty_bg.png"
-dest="/usr/share/backgrounds/kitty_bg.png"
+dest_folder="/usr/share/backgrounds"
+dest="$dest_folder/kitty_bg.png"
 
 for arg in "$@"; do
     if [ "$arg" == "--overwrite" ]; then
@@ -25,6 +26,7 @@ else
     echo "Copying background to the shared backgrounds folder."
 fi
 
+sudo mkdir -p "$dest_folder"
 sudo cp "$source" "$dest"
 echo "Background image copied to $dest"
 

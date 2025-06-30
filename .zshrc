@@ -18,6 +18,8 @@ alias la='exa -la'
 alias grep='rg'
 alias cat='bat'
 alias top='btop'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Keybindings
 bindkey -v

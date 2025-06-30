@@ -52,3 +52,5 @@ create_symlink "$DOTFILES/kitty" "$HOME/.config/kitty"
 execute_install_script "$DOTFILES/kitty"
 
 create_symlink "$DOTFILES/.zshrc" "$HOME/.zshrc"
+
+execute_install_script "$DOTFILES/mpv"
