@@ -4,6 +4,7 @@ SHOW_VIDEO=false
 DOWNLOAD_PATH=""
 MIX_LINK=""
 START_INDEX=0
+SUBTITLES=false
 
 yell() {
     echo "ERROR: [ $@ ]" >&2
@@ -18,6 +19,10 @@ while [[ $# -gt 0 ]]; do
         --start-index)
             START_INDEX=$2
             shift 2
+            ;;
+        --subtitles)
+            SUBTITLES=true
+            shift
             ;;
         --download)
             DOWNLOAD_PATH=$2
@@ -56,6 +61,9 @@ fi
 
 MPV_CMD="mpv"
 $SHOW_VIDEO || MPV_CMD+=" --no-video"
+if $SUBTITLES; then
+    MPV_CMD+=" --sub-ass"
+fi
 
 DOWNLOAD_PIDS=()
 
