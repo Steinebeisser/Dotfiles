@@ -3,7 +3,7 @@
 ---
 
 This repo contains the setup for my linux machiens. \
-Im using [Chezmoi](https://www.chezmoi.io) as my dotfile manager \
+Im using [Chezmoi](https://www.chezmoi.io) as my dotfile manager
 
 Currently no automated script to install packages/setup everything, therefore here a list of needed packages
 
