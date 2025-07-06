@@ -3,6 +3,9 @@
     email = paul.geisthardt@gmx.de
     signingkey = 4890F11F198DEB9A
 
+[core]
+    editor = nvim
+
 [commit]
     gpgSign = true
 
