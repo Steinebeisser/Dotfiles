@@ -14,8 +14,8 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
-				auto_install = true,
+				-- ensure_installed = { "lua_ls" },
+				-- auto_install = true,
 			})
 		end,
 	},
@@ -32,17 +32,16 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				cmd = { "lua-language-server" },
 			})
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
+				cmd = { "clangd" },
 			})
-			--lspconfig.roslyn.setup({
-			--capabilities = capabilities
-			--})
-			--vim.lsp.config("roslyn", {
-			--capabilities = capabilities
-			--})
-			--vim.lsp.enable("roslyn")
+			lspconfig.nixd.setup({
+				capabilities = capabilities,
+				cmd = { "nixd" },
+			})
 		end,
 	},
 }

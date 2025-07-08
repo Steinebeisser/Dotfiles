@@ -27,5 +27,14 @@ return {
                 dotnet_compiler_diagnostics_scope = "fullSolution",
             },
         },
+        vim.lsp.config("roslyn", {
+            cmd = {
+                "dotnet",
+                "/nix/store/din99b4x7v99w1cny76fpf90kw83s3kj-roslyn-ls-5.0.0-1.25312.6/lib/roslyn-ls/Microsoft.CodeAnalysis.LanguageServer.dll",
+                "--logLevel=Information",
+                "--extensionLogDirectory=/home/stein",
+                "--stdio",
+            },
+        }),
     },
 }
